@@ -1,0 +1,22 @@
+[package]
+name = "slog-imgui"
+version = "0.0.1"
+edition = "2021"
+description = "Dear ImGui window and drain with async capabilities for slog-rs"
+homepage = "https://github.com/Kelpsy/slog-imgui"
+repository = "https://github.com/Kelpsy/slog-imgui"
+license = "MIT OR Apache-2.0"
+keywords = ["slog", "logging", "log", "imgui"]
+
+[features]
+nightly = []
+async = ["crossbeam-channel"]
+
+[dependencies]
+imgui = { git = "https://github.com/imgui-rs/imgui-rs" }
+slog = "2.7"
+ahash = "0.7"
+crossbeam-channel = { version = "0.5", optional = true }
+
+[dev-dependencies]
+crossbeam-channel = "0.5"
