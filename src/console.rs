@@ -108,7 +108,7 @@ pub struct Console {
 }
 
 impl Console {
-    pub fn render_window(
+    pub fn draw_window(
         &mut self,
         ui: &Ui,
         font: Option<FontId>,
@@ -117,19 +117,19 @@ impl Console {
         opened: &mut bool,
     ) {
         ui.window("Log").opened(opened).build(|| {
-            self.render_options(ui);
+            self.draw_options(ui);
             ui.child_window("log_contents").build(|| {
                 let _font_token = font.map(|font| ui.push_font(font));
                 let _item_spacing =
                     ui.push_style_var(imgui::StyleVar::ItemSpacing([0.0, text_spacing]));
                 let _frame_padding =
                     ui.push_style_var(imgui::StyleVar::FramePadding([text_padding; 2]));
-                self.render(ui);
+                self.draw(ui);
             });
         });
     }
 
-    pub fn render_options(&mut self, ui: &Ui) {
+    pub fn draw_options(&mut self, ui: &Ui) {
         if let OptionsVisibility::Shown {
             msg_filter_buf,
             kv_filter_buf,
@@ -194,7 +194,7 @@ impl Console {
         }
     }
 
-    pub fn render(&mut self, ui: &Ui) {
+    pub fn draw(&mut self, ui: &Ui) {
         let history = if self.filter_data.filtering_enabled() {
             &self.history.filtered
         } else {
