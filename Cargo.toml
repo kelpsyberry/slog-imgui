@@ -3,8 +3,8 @@ name = "slog-imgui"
 version = "0.0.1"
 edition = "2021"
 description = "Dear ImGui window and drain with async capabilities for slog-rs"
-homepage = "https://github.com/Kelpsy/slog-imgui"
-repository = "https://github.com/Kelpsy/slog-imgui"
+homepage = "https://github.com/kelpsyberry/slog-imgui"
+repository = "https://github.com/kelpsyberry/slog-imgui"
 license = "MIT OR Apache-2.0"
 keywords = ["slog", "logging", "log", "imgui"]
 
